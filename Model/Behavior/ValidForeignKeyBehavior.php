@@ -62,32 +62,32 @@ App::uses('ModelBehavior', 'Model');
  */
 class ValidForeignKeyBehavior extends ModelBehavior {
 
-	/**
-	 * Default settings for a model that has this behavior attached
-	 *
-	 * 'autoValidate' = Check all foreign keys automatically.
-	 * Defaults to false, use the validForeignKey data validation rule instead.
-	 * 'errMsg' = The error message to display.
-	 * 'exclude = Fields you want to exclude from the validation.
-	 *
-	 * @var array
-	 */
+/**
+ * Default settings for a model that has this behavior attached
+ *
+ * 'autoValidate' = Check all foreign keys automatically.
+ * Defaults to false, use the validForeignKey data validation rule instead.
+ * 'errMsg' = The error message to display.
+ * 'exclude = Fields you want to exclude from the validation.
+ *
+ * @var array
+ */
 	protected $_defaults = array(
 		'autoValidate' => false,
 		'errMsg' => 'The key/ID for %s must exist.',
 		'exclude' => array(),
 	);
 
-	/**
-	 * Setup the behavior
-	 *
-	 * Checks if the configuration settings are set in the model,
-	 * merges them with the the defaults.
-	 *
-	 * @param Model $model Model using this behavior
-	 * @param array $config Configuration settings for $model
-	 * @return void
-	 */
+/**
+ * Setup the behavior
+ *
+ * Checks if the configuration settings are set in the model,
+ * merges them with the the defaults.
+ *
+ * @param Model $model Model using this behavior
+ * @param array $config Configuration settings for $model
+ * @return void
+ */
 	public function setup(Model $model, $config = array()) {
 		if (!isset($this->settings[$model->alias])) {
 			$this->settings[$model->alias] = $this->_defaults;
@@ -96,15 +96,15 @@ class ValidForeignKeyBehavior extends ModelBehavior {
 			$this->settings[$model->alias], (array)$config);
 	}
 
-	/**
-	 * Adds the validateAllForeignKeys data validation rule dynamically
-	 *
-	 * If 'autoValidate' is set to true
-	 *
-	 * @param Model $model Model using this behavior
-	 * @param array $options Options passed from Model::save() (unused).
-	 * @return boolean True if validate operation should continue, false to abort
-	 */
+/**
+ * Adds the validateAllForeignKeys data validation rule dynamically
+ *
+ * If 'autoValidate' is set to true
+ *
+ * @param Model $model Model using this behavior
+ * @param array $options Options passed from Model::save() (unused).
+ * @return boolean True if validate operation should continue, false to abort
+ */
 	public function beforeValidate(Model $model, $options = array()) {
 		if ($this->settings[$model->alias]['autoValidate']) {
 			$this->validateAllForeignKeys($model);
@@ -113,18 +113,18 @@ class ValidForeignKeyBehavior extends ModelBehavior {
 		return parent::beforeValidate($model, $options);
 	}
 
-	/**
-	 * Validate all foreign keys of the model.
-	 *
-	 * Only checks the keys if they are present in the data of the model array.
-	 *
-	 * @param Model $model The model to test.
-	 * @return boolean True if valid, else false.
-	 * @todo Write a test where we have only one foreign key field in $model->data with a valid key
-	 * @todo Write a test where we have only one foreign key field in $model->data with an invalid key
-	 * @todo Write a test where we have more than one foreign key field in $model->data with a valid key
-	 * @todo Write a test where we have more than one foreign key field in $model->data with an invalid key
-	 */
+/**
+ * Validate all foreign keys of the model.
+ *
+ * Only checks the keys if they are present in the data of the model array.
+ *
+ * @param Model $model The model to test.
+ * @return boolean True if valid, else false.
+ * @todo Write a test where we have only one foreign key field in $model->data with a valid key
+ * @todo Write a test where we have only one foreign key field in $model->data with an invalid key
+ * @todo Write a test where we have more than one foreign key field in $model->data with a valid key
+ * @todo Write a test where we have more than one foreign key field in $model->data with an invalid key
+ */
 	public function validateAllForeignKeys(Model $model) {
 		// Get the aliases of all associations as array('AliasName) => 'alias_id', ...)
 		$returnForeignKey = create_function('$belongToAssociation', 'return $belongToAssociation["foreignKey"];');
@@ -163,19 +163,19 @@ class ValidForeignKeyBehavior extends ModelBehavior {
 		}
 	}
 
-	/**
-	 * Validate if a key exists in the associated table.
-	 *
-	 * @param Model $model The model to validate.
-	 * @param array $data The key/value pair to validate.
-	 * @param boolean $allowNull If null is allowed (optional).
-	 * @param null|string $assocModelName The name of the associated model (optional).
-	 * @param string $assocFieldName The name of the associated field (optional).
-	 * @param null|string $assocFieldValue The value to validate instead (optional).
-	 * @return bool True if valid, else false.
-	 * @throws InvalidArgumentException If an invalid amount of arguments was supplied.
-	 * @todo Explain it's intentional that we don't introspect the model under test, as we do in validateAllForeignKeys.
-	 */
+/**
+ * Validate if a key exists in the associated table.
+ *
+ * @param Model $model The model to validate.
+ * @param array $data The key/value pair to validate.
+ * @param boolean $allowNull If null is allowed (optional).
+ * @param null|string $assocModelName The name of the associated model (optional).
+ * @param string $assocFieldName The name of the associated field (optional).
+ * @param null|string $assocFieldValue The value to validate instead (optional).
+ * @return bool True if valid, else false.
+ * @throws InvalidArgumentException If an invalid amount of arguments was supplied.
+ * @todo Explain it's intentional that we don't introspect the model under test, as we do in validateAllForeignKeys.
+ */
 	public function validForeignKey(Model $model, $data, $allowNull = false,
 									$assocModelName = null, $assocFieldName = 'id',
 									$assocFieldValue = null) {
