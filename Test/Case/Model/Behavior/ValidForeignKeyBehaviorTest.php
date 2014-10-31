@@ -19,36 +19,37 @@ App::uses('ValidForeignKeyBehavior', 'ValidForeignKey.Model/Behavior');
  */
 class ValidForeignKeyBehaviorTest {
 
-	/**
-	 * Model under test
-	 *
-	 * @var
-	 */
-	public $Model;
+/**
+ * Model under test
+ *
+ * @var
+ */
+	protected $_model;
 
-	/**
-	 * Fixtures
-	 *
-	 * @var array
-	 */
-	public $fixtures = array();
+/**
+ * Fixtures
+ *
+ * @var array
+ */
+	public $fixtures = array(
+	);
 
-	/**
-	 * setUp method
-	 *
-	 * @return void
-	 * @todo Choose two associated tables from the core fixtures to use or create own
-	 */
+/**
+ * setUp method
+ *
+ * @return void
+ * @todo Choose two associated tables from the core fixtures to use or create own
+ */
 	public function setUp() {
 		parent::setUp();
-		//$this->Model = ClassRegistry::init('ValidForeignKeyBehaviorModel');
+		//$this->_model = ClassRegistry::init('Main');
 	}
 
-	/**
-	 * tearDown method
-	 *
-	 * @return void
-	 */
+/**
+ * tearDown method
+ *
+ * @return void
+ */
 	public function tearDown() {
 		unset($this->Model);
 
