@@ -1,22 +1,25 @@
 <?php
 /**
- * A CakePHP behavior to add data validation for foreign keys
+ * ValidForeignKey Behavior
  *
- * Inspired by dogmatic69's and iamFIREcracker's solutions.
- * But instead of looping through all bound associations,
- * you can selectively validate one foreign key with this behavior.
+ * Licensed under The MIT License.
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
  *
- * @author Marc Würth
+ * @copyright Marc Würth
+ * @author Marc Würth <ravage@bluewin.ch>
  * @license http://www.opensource.org/licenses/mit-license.php MIT License
- *
- * @link https://github.com/infinitas/infinitas/blob/v0.9b/Core/Libs/Model/Behavior/ValidationBehavior.php#L147-L185 dogmatic69's solution.
- * @link https://gist.github.com/iamFIREcracker/1307191 iamFIREcracker's solution.
- **/
+ * @link https://github.com/ravage84/ValidForeignKeyBehavior
+ */
 
 App::uses('ModelBehavior', 'Model');
 
 /**
  * A CakePHP behavior to add data validation for foreign keys
+ *
+ * Inspired by dogmatic69's and iamFIREcracker's solutions.
+ * But instead of looping through all bound associations,
+ * you can selectively validate one foreign key with this behavior.
  *
  * Provides two ways of validation:
  * 1. Validate all foreign keys
@@ -53,6 +56,9 @@ App::uses('ModelBehavior', 'Model');
  *     ),
  * ));
  * </code>
+ *
+ * @link https://github.com/infinitas/infinitas/blob/v0.9b/Core/Libs/Model/Behavior/ValidationBehavior.php#L147-L185 dogmatic69's solution.
+ * @link https://gist.github.com/iamFIREcracker/1307191 iamFIREcracker's solution.
  */
 class ValidForeignKeyBehavior extends ModelBehavior {
 
