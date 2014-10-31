@@ -41,7 +41,6 @@ class ValidForeignKeyBehaviorTest {
  * setUp method
  *
  * @return void
- * @todo Choose two associated tables from the core fixtures to use or create own
  */
 	public function setUp() {
 		parent::setUp();
@@ -54,8 +53,102 @@ class ValidForeignKeyBehaviorTest {
  * @return void
  */
 	public function tearDown() {
-		unset($this->Model);
+		unset($this->_model);
 
 		parent::tearDown();
 	}
+
+	/**
+	 * Tests the default config (no config given)
+	 *
+	 * @return void
+	 * @coversNothing
+	 */
+	public function testDefaultConfig() {
+		$this->_loadBehavior();
+
+		$settings = $this->_model->Behaviors->ValidForeignKey->settings['ForeignMain'];
+		$expected = array(
+			'autoValidate' => false,
+			'errMsg' => 'The key/ID for %s must exist.',
+			'exclude' => array(),
+		);
+		$this->assertSame($expected, $settings);
+	}
+
+	/**
+	 * Tests overwriting the default config.
+	 *
+	 * @return void
+	 * @covers ::setup
+	 */
+	public function testOverwritingConfig() {
+		$this->_loadBehavior(
+			array(
+				'autoValidate' => true,
+				'errMsg' => 'Error Message',
+				'exclude' => array('some_field'),
+			)
+		);
+
+		$settings = $this->_model->Behaviors->ValidForeignKey->settings['ForeignMain'];
+		$expected = array(
+			'autoValidate' => true,
+			'errMsg' => 'Error Message',
+			'exclude' => array('some_field'),
+		)
+		;
+		$this->assertSame($expected, $settings);
+	}
+
+	/**
+	 * Tests overwriting the default config using the model name.
+	 *
+	 * @return void
+	 * @covers ::setup
+	 */
+	public function testOverwritingConfigWithModelName() {
+		$this->_loadBehavior(
+			array(
+				'ForeignMain' => array(
+					'autoValidate' => true,
+					'errMsg' => 'Another Error Message',
+					'exclude' => array('some_other_field'),
+				)
+			)
+		);
+
+		$settings = $this->_model->Behaviors->ValidForeignKey->settings['ForeignMain'];
+		$expected = array(
+			'ForeignMain' => array(
+				'autoValidate' => true,
+				'errMsg' => 'Another Error Message',
+				'exclude' => array('some_other_field'),
+			)
+		)
+		;
+		$this->assertSame($expected, $settings);
+	}
+
+	/**
+	 * Tests that beforeValidate calls validateAllForeignKeys when autoValidate = true.
+	 *
+	 * @return void
+	 * @covers ::beforeValidate
+	 */
+	public function testAutoValidateCallsMethod() {
+		$this->_loadBehavior(
+			array(
+				'autoValidate' => true,
+			)
+		);
+
+		// Mock validateAllForeignKeys method
+		// Expect it to be called once with the model as parameter.
+
+		$this->markTestIncomplete(
+			'This test has not been fully implemented yet.'
+		);
+	}
+
 } 
