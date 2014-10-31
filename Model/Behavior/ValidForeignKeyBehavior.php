@@ -103,7 +103,7 @@ class ValidForeignKeyBehavior extends ModelBehavior {
  *
  * @param Model $model Model using this behavior
  * @param array $options Options passed from Model::save() (unused).
- * @return boolean True if validate operation should continue, false to abort
+ * @return bool True if validate operation should continue, false to abort
  */
 	public function beforeValidate(Model $model, $options = array()) {
 		if ($this->settings[$model->alias]['autoValidate']) {
@@ -119,7 +119,7 @@ class ValidForeignKeyBehavior extends ModelBehavior {
  * Only checks the keys if they are present in the data of the model array.
  *
  * @param Model $model The model to test.
- * @return boolean True if valid, else false.
+ * @return bool True if valid, else false.
  * @todo Write a test where we have only one foreign key field in $model->data with a valid key
  * @todo Write a test where we have only one foreign key field in $model->data with an invalid key
  * @todo Write a test where we have more than one foreign key field in $model->data with a valid key
@@ -168,7 +168,7 @@ class ValidForeignKeyBehavior extends ModelBehavior {
  *
  * @param Model $model The model to validate.
  * @param array $data The key/value pair to validate.
- * @param boolean $allowNull If null is allowed (optional).
+ * @param bool $allowNull If null is allowed (optional).
  * @param null|string $assocModelName The name of the associated model (optional).
  * @param string $assocFieldName The name of the associated field (optional).
  * @param null|string $assocFieldValue The value to validate instead (optional).
