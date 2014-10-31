@@ -19,11 +19,11 @@
  */
 class AllTests extends PHPUnit_Framework_TestSuite {
 
-	/**
-	 * Defines tests for this suite
-	 *
-	 * @return PHPUnit_Framework_TestSuite
-	 */
+/**
+ * Defines tests for this suite
+ *
+ * @return PHPUnit_Framework_TestSuite
+ */
 	public static function suite() {
 		$suite = new CakeTestSuite('All ValidForeignKeyBehavior tests');
 
