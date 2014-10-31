@@ -1,46 +1,46 @@
 {
-	"name": "ravage84/validforeignkeybehavior",
-	"description": "A CakePHP behavior to validate foreign keys",
-	"type": "cakephp-plugin",
-	"keywords":[
-		"cakephp",
-		"plugin",
-		"valid",
-		"foreign",
-		"key",
-		"data",
-		"validation",
-		"data validation",
-		"behavior"
-	],
-	"homepage": "https://github.com/ravage84/ValidForeignKeyBehavior",
-	"license": "MIT",
-	"authors": [
-		{
-			"name": "Marc Würth",
-			"homepage": "https://github.com/ravage84/",
-			"email": "ravage@bluewin.ch",
-			"role": "Lead developer"
-		},
-		{
-			"name": "Other contributors",
-			"homepage": "https://github.com/ravage84/ValidForeignKeyBehavior/graphs/contributors",
-			"role": "Contributors"
-		}
-	],
-	"support": {
-		"source": "https://github.com/ravage84/ValidForeignKeyBehavior",
-		"issues": "https://github.com/ravage84/ValidForeignKeyBehavior/issues",
-		"wiki":"https://github.com/ravage84/ValidForeignKeyBehavior/wiki"
-	},
-	"require": {
-		"php": ">=5.3.0",
-		"composer/installers": "*"
-	},
-	"require-dev": {
-		"phpunit/phpunit": "3.7.*"
-	},
-	"extra": {
-		"installer-name": "ValidForeignKey"
-	}
+  "name": "ravage84/validforeignkeybehavior",
+  "description": "A CakePHP behavior to validate foreign keys",
+  "type": "cakephp-plugin",
+  "keywords":[
+    "cakephp",
+    "plugin",
+    "valid",
+    "foreign",
+    "key",
+    "data",
+    "validation",
+    "data validation",
+    "behavior"
+  ],
+  "homepage": "https://github.com/ravage84/ValidForeignKeyBehavior",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Marc Würth",
+      "homepage": "https://github.com/ravage84/",
+      "email": "ravage@bluewin.ch",
+      "role": "Lead developer"
+    },
+    {
+      "name": "Other contributors",
+      "homepage": "https://github.com/ravage84/ValidForeignKeyBehavior/graphs/contributors",
+      "role": "Contributors"
+    }
+  ],
+  "support": {
+    "source": "https://github.com/ravage84/ValidForeignKeyBehavior",
+    "issues": "https://github.com/ravage84/ValidForeignKeyBehavior/issues",
+    "wiki":"https://github.com/ravage84/ValidForeignKeyBehavior/wiki"
+  },
+  "require": {
+    "php": ">=5.3.0",
+    "composer/installers": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "3.7.*"
+  },
+  "extra": {
+    "installer-name": "ValidForeignKey"
+  }
 }
