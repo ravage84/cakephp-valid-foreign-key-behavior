@@ -20,12 +20,6 @@ class ForeignMainFixture extends CakeTestFixture {
 /**
  * Table schema
  *
- * 1. A pair of integer fields
- * 2. A pair of string fields
- * 3. A pair of boolean fields
- * 4. A pair of datetime fields
- * 5. A pair of float fields
- *
  * @var array
  */
 	public $fields = array(
