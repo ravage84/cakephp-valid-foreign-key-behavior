@@ -32,6 +32,9 @@ class ValidForeignKeyBehaviorTest {
  * @var array
  */
 	public $fixtures = array(
+		'plugin.valid_foreign_key.foreign_main',
+		'plugin.valid_foreign_key.foreign_one',
+		'plugin.valid_foreign_key.foreign_two',
 	);
 
 /**
@@ -42,7 +45,7 @@ class ValidForeignKeyBehaviorTest {
  */
 	public function setUp() {
 		parent::setUp();
-		//$this->_model = ClassRegistry::init('Main');
+		$this->_model = ClassRegistry::init('ForeignMain');
 	}
 
 /**
