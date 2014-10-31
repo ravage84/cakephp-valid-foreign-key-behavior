@@ -12,6 +12,3 @@ A CakePHP 2.x behavior plugin to validate foreign keys
 - Add Versioning to README
 - Add "CakePHP Version Support" to README
 - Add "How To Use" to README
-- Add a  .gitignore file
-- Add a travis.yml file
-- Setup Travis CI
