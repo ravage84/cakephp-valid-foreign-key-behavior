@@ -154,4 +154,20 @@ class ValidForeignKeyBehaviorTest {
 		);
 	}
 
+/**
+ * Loads the behavior with the given config
+ *
+ * Specifically handles the case of setting no config at all.
+ *
+ * @param null|array $config Optional Behavior config to set.
+ * @return void
+ */
+	protected function _loadBehavior($config = null) {
+		if ($config === null) {
+			$this->_model->Behaviors->load('MultiColumnUniqueness.MultiColumnUniqueness');
+		} else {
+			$this->_model->Behaviors->load('MultiColumnUniqueness.MultiColumnUniqueness', $config);
+		}
+	}
+
 } 
