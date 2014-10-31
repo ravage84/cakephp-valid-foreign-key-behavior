@@ -16,6 +16,9 @@ App::uses('ValidForeignKeyBehavior', 'ValidForeignKey.Model/Behavior');
 
 /**
  * Class ValidForeignKeyBehaviorTest
+ *
+ * @property AppModel $_model
+ * @coversDefaultClass ValidForeignKeyBehavior
  */
 class ValidForeignKeyBehaviorTest {
 
