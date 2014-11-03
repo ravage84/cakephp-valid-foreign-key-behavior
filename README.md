@@ -1,6 +1,8 @@
 ValidForeignKeyBehavior
 =======================
 
+[![Build Status](https://travis-ci.org/ravage84/ValidForeignKeyBehavior.svg?branch=master)](https://travis-ci.org/ravage84/ValidForeignKeyBehavior)
+
 A CakePHP 2.x behavior plugin to validate foreign keys
 
 ## TODOs
