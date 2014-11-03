@@ -20,7 +20,7 @@ App::uses('ValidForeignKeyBehavior', 'ValidForeignKey.Model/Behavior');
  * @property AppModel $_model
  * @coversDefaultClass ValidForeignKeyBehavior
  */
-class ValidForeignKeyBehaviorTest {
+class ValidForeignKeyBehaviorTest extends CakeTestCase {
 
 /**
  * Model under test
