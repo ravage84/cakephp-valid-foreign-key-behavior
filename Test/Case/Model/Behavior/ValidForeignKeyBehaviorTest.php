@@ -61,12 +61,12 @@ class ValidForeignKeyBehaviorTest {
 		parent::tearDown();
 	}
 
-	/**
-	 * Tests the default config (no config given)
-	 *
-	 * @return void
-	 * @coversNothing
-	 */
+/**
+ * Tests the default config (no config given)
+ *
+ * @return void
+ * @coversNothing
+ */
 	public function testDefaultConfig() {
 		$this->_loadBehavior();
 
@@ -79,12 +79,12 @@ class ValidForeignKeyBehaviorTest {
 		$this->assertSame($expected, $settings);
 	}
 
-	/**
-	 * Tests overwriting the default config.
-	 *
-	 * @return void
-	 * @covers ::setup
-	 */
+/**
+ * Tests overwriting the default config.
+ *
+ * @return void
+ * @covers ::setup
+ */
 	public function testOverwritingConfig() {
 		$this->_loadBehavior(
 			array(
@@ -104,12 +104,12 @@ class ValidForeignKeyBehaviorTest {
 		$this->assertSame($expected, $settings);
 	}
 
-	/**
-	 * Tests overwriting the default config using the model name.
-	 *
-	 * @return void
-	 * @covers ::setup
-	 */
+/**
+ * Tests overwriting the default config using the model name.
+ *
+ * @return void
+ * @covers ::setup
+ */
 	public function testOverwritingConfigWithModelName() {
 		$this->_loadBehavior(
 			array(
@@ -133,12 +133,12 @@ class ValidForeignKeyBehaviorTest {
 		$this->assertSame($expected, $settings);
 	}
 
-	/**
-	 * Tests that beforeValidate calls validateAllForeignKeys when autoValidate = true.
-	 *
-	 * @return void
-	 * @covers ::beforeValidate
-	 */
+/**
+ * Tests that beforeValidate calls validateAllForeignKeys when autoValidate = true.
+ *
+ * @return void
+ * @covers ::beforeValidate
+ */
 	public function testAutoValidateCallsMethod() {
 		$this->_loadBehavior(
 			array(

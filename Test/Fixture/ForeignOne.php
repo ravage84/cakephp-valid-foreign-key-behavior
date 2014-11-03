@@ -17,14 +17,14 @@
  */
 class ForeignOneFixture extends CakeTestFixture {
 
-	/**
-	 * Table schema
-	 *
-	 * Just needs an ID.
-	 *
-	 *
-	 * @var array
-	 */
+/**
+ * Table schema
+ *
+ * Just needs an ID.
+ *
+ *
+ * @var array
+ */
 	public $fields = array(
 		'id' => array('type' => 'integer', 'null' => false, 'length' => 11, 'key' => 'primary'),
 		'name' => array('type' => 'string', 'length' => 10, 'null' => true),

@@ -30,13 +30,13 @@ class ForeignTwoFixture extends CakeTestFixture {
 		'name' => array('type' => 'string', 'length' => 10, 'null' => true),
 	);
 
-	/**
-	 * Fixture records
-	 *
-	 * Does not have one overlapping record with the other foreign table.
-	 *
-	 * @var array
-	 */
+/**
+ * Fixture records
+ *
+ * Does not have one overlapping record with the other foreign table.
+ *
+ * @var array
+ */
 	public $records = array(
 		array(
 			'id' => 10,
