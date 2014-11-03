@@ -99,8 +99,7 @@ class ValidForeignKeyBehaviorTest {
 			'autoValidate' => true,
 			'errMsg' => 'Error Message',
 			'exclude' => array('some_field'),
-		)
-		;
+		);
 		$this->assertSame($expected, $settings);
 	}
 
