@@ -116,14 +116,10 @@ class ValidForeignKeyBehavior extends ModelBehavior {
 /**
  * Validate all foreign keys of the model.
  *
- * Only checks the keys if they are present in the data of the model array.
+ * Only checks the keys, if they are present in the data of the model array.
  *
  * @param Model $model The model to test.
  * @return bool True if valid, else false.
- * @todo Write a test where we have only one foreign key field in $model->data with a valid key
- * @todo Write a test where we have only one foreign key field in $model->data with an invalid key
- * @todo Write a test where we have more than one foreign key field in $model->data with a valid key
- * @todo Write a test where we have more than one foreign key field in $model->data with an invalid key
  */
 	public function validateAllForeignKeys(Model $model) {
 		// Get the aliases of all associations as array('AliasName) => 'alias_id', ...)
@@ -166,6 +162,9 @@ class ValidForeignKeyBehavior extends ModelBehavior {
 /**
  * Validate if a key exists in the associated table.
  *
+ * It is intentional that we don't introspect the model
+ * as we do it in validateAllForeignKeys().
+ *
  * @param Model $model The model to validate.
  * @param array $data The key/value pair to validate.
  * @param bool $allowNull If null is allowed (optional).
@@ -174,7 +173,6 @@ class ValidForeignKeyBehavior extends ModelBehavior {
  * @param null|string $assocFieldValue The value to validate instead (optional).
  * @return bool True if valid, else false.
  * @throws InvalidArgumentException If an invalid amount of arguments was supplied.
- * @todo Explain it's intentional that we don't introspect the model under test, as we do in validateAllForeignKeys.
  */
 	public function validForeignKey(Model $model, $data, $allowNull = false,
 									$assocModelName = null, $assocFieldName = 'id',
@@ -222,8 +220,8 @@ class ValidForeignKeyBehavior extends ModelBehavior {
 
 			return false;
 		}
-		// Workaround datasources which allow false as key like ArraySource,
-		// would be converted to "" otherwise
+		// Workaround datasources like ArraySource, which allows false as key,
+		// would be converted to "" otherwise.
 		if ($assocFieldValue === false) {
 			$assocFieldValue = 0;
 		}
