@@ -7,4 +7,4 @@ tools:
     sensiolabs_security_checker: true
     php_code_sniffer:
         config:
-            ruleset: ../../vendor/cakephp/cakephp-codesniffer/CakePHP/ruleset.xml
+            ruleset: ../vendor/cakephp/cakephp-codesniffer/CakePHP/ruleset.xml
