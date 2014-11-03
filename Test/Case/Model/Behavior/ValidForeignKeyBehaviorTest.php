@@ -128,8 +128,7 @@ class ValidForeignKeyBehaviorTest {
 				'errMsg' => 'Another Error Message',
 				'exclude' => array('some_other_field'),
 			)
-		)
-		;
+		);
 		$this->assertSame($expected, $settings);
 	}
 
