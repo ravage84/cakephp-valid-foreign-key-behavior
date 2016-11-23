@@ -1,6 +1,10 @@
 # User specific & automatically generated files #
 #################################################
-*.mo
+/build
+/vendor
+/phpunit.xml
+/phpcs.xml
+*.mox
 
 # IDE and editor specific files #
 #################################
