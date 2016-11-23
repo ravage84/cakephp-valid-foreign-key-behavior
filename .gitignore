@@ -12,6 +12,10 @@
 .buildpath
 .settings
 
+# PHP Tools #
+#############
+*.phar
+
 # OS generated files #
 ######################
 .DS_Store
