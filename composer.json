@@ -1,5 +1,5 @@
 {
-  "name": "ravage84/validforeignkeybehavior",
+  "name": "ravage84/cakephp-valid-foreign-key-behavior",
   "description": "A CakePHP behavior to validate foreign keys",
   "type": "cakephp-plugin",
   "keywords":[
