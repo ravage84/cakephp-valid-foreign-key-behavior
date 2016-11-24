@@ -122,6 +122,9 @@ class ValidForeignKeyBehaviorTest extends CakeTestCase {
 
 		$settings = $this->_model->Behaviors->ValidForeignKey->settings['ForeignMain'];
 		$expected = array(
+			'autoValidate' => false,
+			'errMsg' => 'The key/ID for %s must exist.',
+			'exclude' => array(),
 			'ForeignMain' => array(
 				'autoValidate' => true,
 				'errMsg' => 'Another Error Message',
@@ -162,9 +165,9 @@ class ValidForeignKeyBehaviorTest extends CakeTestCase {
  */
 	protected function _loadBehavior($config = null) {
 		if ($config === null) {
-			$this->_model->Behaviors->load('MultiColumnUniqueness.MultiColumnUniqueness');
+			$this->_model->Behaviors->load('ValidForeignKey.ValidForeignKey');
 		} else {
-			$this->_model->Behaviors->load('MultiColumnUniqueness.MultiColumnUniqueness', $config);
+			$this->_model->Behaviors->load('ValidForeignKey.ValidForeignKey', $config);
 		}
 	}
 
