@@ -2,7 +2,14 @@
 All notable changes to this project are documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased](https://github.com/ravage84/cakephp-valid-foreign-key-behavior/compare/0.1.0...master)
+## [Unreleased](https://github.com/ravage84/cakephp-valid-foreign-key-behavior/compare/0.2.0...master)
+### Added
+
+### Changed
+
+### Fixed
+
+## [0.2.0](https://github.com/ravage84/cakephp-valid-foreign-key-behavior/releases/tag/0.2.0) - 2016-11-24
 ### Added
 - Added this change log #6 
 - Add typical files & folders to .gitignore including phar files
@@ -13,6 +20,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Remove satooshi/php-coveralls
 - Updated cakephp/cakephp-codesniffer from 0.1.29 to 1.0.1
 - Depend on composer/installers^1.0
+- Do no export unnecessary files to distribution package
 
 ### Fixed
 - Disable php_code_sniffer in Scrutinizer CI to get Scrutinizer build to succeed
