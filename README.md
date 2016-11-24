@@ -56,6 +56,10 @@ TODO
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
 
+## Security
+
+If you discover any security related issues, **please email** @ravage84 **instead** of using the issue tracker.
+
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md)
